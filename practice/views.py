@@ -13,7 +13,7 @@ def function_annotation_1(request):
     )
 
 
-def func_1(arg1: str, arg2: 1 + 2, arg3: "this is annotation") -> str:
+def func_1(arg1: str, arg2: int = 3, arg3: str = "this is annotation") -> tuple:
     print(f"print arg1 = {arg1}")
     print(f"print arg2 = {arg2}")
     print(f"print arg3 = {arg3}")
@@ -21,9 +21,7 @@ def func_1(arg1: str, arg2: 1 + 2, arg3: "this is annotation") -> str:
 
 
 def func_2(arg1: int) -> bool:
-    if arg1 < 0:
-        return False
-    return True
+    return arg1 >= 0
 
 
 def exception_1(request):
