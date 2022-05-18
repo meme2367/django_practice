@@ -27,7 +27,7 @@ def union_typing(num: Union[int, float]) -> str:
     return str(num)
 
 
-def optional_typing(msg: str, times: Optional[int] = None) -> list:
+def optional_typing(msg: str, times: Optional[int] = None) -> list[str]:
     if times is None:
         return list(msg)
     return list(msg) * times
@@ -37,16 +37,14 @@ def print_name(name: str) -> str:
     return "내 이름은 " + name + "!"
 
 
-def callable_typing(func: Callable[[str], str], name: str, times: int = 1):
+def callable_typing(func: Callable[[str], str], name: str, times: int = 1) -> None:
     for i in range(times):
         print(func(name))
 
 
 def make_name_list(*args) -> list:
-    res = list()
-    for item in args:
-        res.append(item)
-    return res
+#    return list(args)
+    return [item for item in args]
 
 
 def callable_typing_using_ellipsis(func: Callable[..., list], *args, times: int = 1):
