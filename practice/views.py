@@ -2,32 +2,55 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import JsonResponse
+from typing import *
 
-def functionAnnotation1(request):
-    return JsonResponse()
 
-def exception1(request):
-    return JsonResponse()
+def function_annotation_1(request):
+    str1 = func_1(1, 2, 3)
+    str2 = func_2(-3)
+    return JsonResponse(
+        {"arg1": str1[0], "arg2": str1[1], "arg3": str1[2], "TrueOrFalse": str2}
+    )
 
-def typing1(request):
-    return JsonResponse()
 
-def call1(request):
-    return JsonResponse()
+def func_1(arg1: str, arg2: int = 3, arg3: str = "this is annotation") -> tuple:
+    print(f"print arg1 = {arg1}")
+    print(f"print arg2 = {arg2}")
+    print(f"print arg3 = {arg3}")
+    return arg1, arg2, arg3
 
-def inheritance1(request):
-    return JsonResponse()
 
-def decorator1(request):
-    return JsonResponse()
+def func_2(arg1: int) -> bool:
+    return arg1 >= 0
 
-def orm1(request):
-    return JsonResponse()
 
-def middleware1(request):
-    return JsonResponse()
-
-def log1(request):
+def exception_1(request):
     return JsonResponse()
 
 
+def typing_1(request):
+    return JsonResponse()
+
+
+def call_1(request):
+    return JsonResponse()
+
+
+def inheritance_1(request):
+    return JsonResponse()
+
+
+def decorator_1(request):
+    return JsonResponse()
+
+
+def orm_1(request):
+    return JsonResponse()
+
+
+def middleware_1(request):
+    return JsonResponse()
+
+
+def log_1(request):
+    return JsonResponse()
