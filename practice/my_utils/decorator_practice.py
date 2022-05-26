@@ -24,8 +24,18 @@ def logger(msg: str):
 def outer_func(tag: str):
     tag = tag
 
-    def inner_func(content: str) -> None:
+    def inner_func(content: str) -> str:
+
+        # str.format
         print("<{0}>{1}<{0}>".format(tag, content))
+
+        # % operator
+        print("<%s>%s<%s>" % (tag, content, tag))
+
+        # f - string
+        print(f"<{tag}>{content}<{tag}>")
+
+        return f"<{tag}>{content}<{tag}>"
 
     return inner_func
 
